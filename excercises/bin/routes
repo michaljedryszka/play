@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /routing/pathparam/:pathParam      controllers.routing.RoutingController.pathParam(pathParam: String)
+GET     /routing/queryparam			       controllers.routing.RoutingController.queryParam(queryParam: String)
+GET     /routing/queryparamfixed	       controllers.routing.RoutingController.queryParam(queryParam: String = "fixedValue")
+GET     /routing/queryparamdefault	       controllers.routing.RoutingController.queryParamDefault(queryParam: String ?= "defaultValue")
+GET     /routing/queryparamoptional	       controllers.routing.RoutingController.queryParamOptional(queryParam: String ?= "defaultValue")
+
+GET     /plainform						   controllers.plainform.FormController.index
+POST    /plainform/post					   controllers.plainform.FormController.post
+GET     /plainform/bind					   controllers.plainform.FormController.bind
+POST    /plainform/bindpost				   controllers.plainform.FormController.bindpost
+
+
+GET     /twirl							   controllers.twirl.LoginController.index
+POST    /twirl/login					   controllers.twirl.LoginController.login
+GET     /twirl/user						   controllers.twirl.UserController.index
+POST    /twirl/usersave					   controllers.twirl.UserController.save
+GET     /twirl/userb3					   controllers.twirl.UserController.indexb3
+POST    /twirl/usersaveb3				   controllers.twirl.UserController.saveb3
+

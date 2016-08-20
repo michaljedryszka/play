@@ -1,0 +1,14 @@
+@import formmodels.twirl.UserForm
+@import b3.vertical.fieldConstructor 
+@(userForm: Form[UserForm])
+
+@views.html.twirl.mainws("User details") {
+	@b3.form(action = controllers.twirl.routes.UserController.saveb3()) {
+	    @b3.text(userForm("name"), '_label -> "Name", '_help -> "")
+	    @b3.text(userForm("email"), '_label -> "Email", '_help -> "")
+	    @b3.text(userForm("phone"), '_label -> "Phone", '_help -> "")
+	    @b3.text(userForm("address"), '_label -> "Address", '_help -> "")
+	    @b3.password(userForm("password"), '_label -> "Password", '_help -> "")
+	    <input type="submit" value="Zapisz"/>
+	}
+}

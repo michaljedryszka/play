@@ -1,0 +1,14 @@
+@import formmodels.twirl.UserForm
+
+@(userForm: Form[UserForm])
+
+@views.html.twirl.main("User details") {
+	@helper.form(action = controllers.twirl.routes.UserController.save()) {
+	    @helper.inputText(userForm("name"), '_label -> "Name", '_help -> "")
+	    @helper.inputText(userForm("email"), '_label -> "Email", '_help -> "")
+	    @helper.inputText(userForm("phone"), '_label -> "Phone", '_help -> "")
+	    @helper.inputText(userForm("address"), '_label -> "Address", '_help -> "")
+	    @helper.inputPassword(userForm("password"), '_label -> "Password", '_help -> "")
+	    <input type="submit" value="Zapisz"/>
+	}
+}

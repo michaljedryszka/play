@@ -1,0 +1,12 @@
+@import formmodels.twirl.UserLoginForm
+
+@(userLoginForm: Form[UserLoginForm])
+
+@views.html.twirl.main("Please login") {
+	@helper.form(action = controllers.twirl.routes.LoginController.login()) {
+	    @helper.inputText(userLoginForm("name"))
+	    @helper.inputPassword(userLoginForm("password"))
+	    <input type="submit" value="Ok"/>
+	}
+}
+	
