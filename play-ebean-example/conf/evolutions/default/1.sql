@@ -24,6 +24,13 @@ create sequence computer_seq start with 1000;
 alter table computer add constraint fk_computer_company_1 foreign key (company_id) references company (id) on delete restrict on update restrict;
 create index ix_computer_company_1 on computer (company_id);
 
+create table t_user (
+  email                        varchar(255) not null,
+  password                      varchar(255) not null,
+  constraint pk_email primary key (email))
+;
+
+
 
 # --- !Downs
 
@@ -39,3 +46,4 @@ drop sequence if exists company_seq;
 
 drop sequence if exists computer_seq;
 
+drop table t_user;

@@ -1,13 +1,16 @@
 package models;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.avaje.ebean.Model;
-import play.data.format.*;
-import play.data.validation.*;
+import com.avaje.ebean.PagedList;
 
-import com.avaje.ebean.*;
+import play.data.format.Formats;
+import play.data.validation.Constraints;
 
 /**
  * Computer entity managed by Ebean

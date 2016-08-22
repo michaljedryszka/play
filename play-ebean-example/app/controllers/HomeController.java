@@ -1,20 +1,29 @@
 package controllers;
 
-import com.avaje.ebean.Ebean;
-import com.avaje.ebean.Transaction;
-import play.mvc.*;
-import play.data.*;
-import static play.data.Form.*;
-
-import models.*;
-
 import javax.inject.Inject;
 import javax.persistence.PersistenceException;
+
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Transaction;
+
+import auth.DBAuthService;
+import auth.Secured;
+import auth.SessionAuthComposition;
+import models.Computer;
+import play.data.Form;
+import play.data.FormFactory;
+import play.mvc.Controller;
+import play.mvc.Result;
+import play.mvc.Results;
+import play.mvc.Security;
+import play.mvc.With;
 
 /**
  * Manage a database of computers
  */
-public class HomeController  extends Controller {
+//@With(SessionAuthComposition.class)
+//@Security.Authenticated(Secured.class)
+public class HomeController extends Controller {
 
     private FormFactory formFactory;
 
@@ -131,7 +140,5 @@ public class HomeController  extends Controller {
         flash("success", "Computer has been deleted");
         return GO_HOME;
     }
-    
-
 }
             

@@ -10,6 +10,8 @@ import models.*;
 
 import com.avaje.ebean.*;
 
+import ebeanmodel.Computer;
+
 public class ModelTest {
     
     private String formatted(Date date) {

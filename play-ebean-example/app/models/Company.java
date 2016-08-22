@@ -1,18 +1,23 @@
 package models;
 
-import java.util.*;
-import javax.persistence.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
-import play.db.ebean.*;
-import play.data.validation.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.avaje.ebean.Model;
+
+import play.data.validation.Constraints;
 
 
 
 /**
  * Company entity managed by Ebean
+ * 
  */
 @Entity 
-public class Company extends com.avaje.ebean.Model {
+public class Company extends Model {
 
     private static final long serialVersionUID = 1L;
 

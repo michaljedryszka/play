@@ -4,6 +4,8 @@
 
 # Default path will just redirect to the computer list
 GET     /                           controllers.HomeController.index()
+POST    /login                      controllers.LoginController.login()
+GET     /login                      controllers.LoginController.showlogin()
 
 # Computers list (look at the default values for pagination parameters)
 GET     /computers                  controllers.HomeController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
